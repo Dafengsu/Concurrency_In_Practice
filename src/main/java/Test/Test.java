@@ -8,7 +8,9 @@ package Test;
 public class Test {
     private String name;
     public Test() {
-        Thread thread = new Thread(this::run);
+        Thread thread = new Thread(() -> {
+            System.out.println("name :" + name);
+        });
         thread.start();
 
         try {
